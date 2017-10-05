@@ -94,7 +94,7 @@ This is a new line (not a new paragraph). This what appear when you hit " shift 
     </w:rPr>
   <w:t>white text on red background</w:t>
 </w:r>
-
+```
 w:color is text color while highlith is background color.
 
 text formatting is not in a different paragraph, but in a different r tag:
