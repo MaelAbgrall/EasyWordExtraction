@@ -1,22 +1,22 @@
-#EasyOpenXML - easily parse OOXML document
+# EasyOpenXML - easily parse OOXML document
 
-##Overview
+## Overview
 EasyOpenXML is an api to parse word document easily. It use OpenXML api from Microsoft and it is intended to be used in a server environment (so you won't see any interop here)
 
-##Summary
-[What the api can do now, and future updates] (#current-status-and-future-updates)
-[OOXML Format quick guide] (#ooxml-quick-guide)
-[Word content control] (#word-content-control)
-[Methods] (#methods)
-[Access time] (#access-time-and-optimisation)
+## Summary
+[What the api can do now, and future updates] (# current-status-and-future-updates)
+[OOXML Format quick guide] (# ooxml-quick-guide)
+[Word content control] (# word-content-control)
+[Methods] (# methods)
+[Access time] (# access-time-and-optimisation)
 
-##Current status and future updates
+## Current status and future updates
 This API is written in C#, and first used in an asp.NET project, this is why I don't use interop (interop need office suite installed on the computer, and microsoft doesn't support it on server environment)
 For now, the api can only get text and images from word's content control (more on next chapter). Some part of the code used is not from me.
 In the future, I'll develop a parser that output a JSON string and do not require content control.
 Anyway, feel free to push updates and develop this project.
 
-##OOXML Quick guide
+## OOXML Quick guide
 Please note that it's better to understand basics of xml and xml namespace!
 Word (and every other office suite's file) are compressed folders.
 When you open this folder, you have a bunch of other files and folders, the one interesting is here: yourfile.docx\word
@@ -37,7 +37,7 @@ This is a paragraph, if it’s empty, the tag will be closed
 Paragraph is a basic element of word, visually it’s what you’re inserting when you hit enter on your keyboard.
 
 
-###Paragraph’s children tags
+### Paragraph’s children tags
 ```xml
 <w:p>
     <w:pPr>
@@ -78,7 +78,7 @@ or use the blip. Blip is a relationship between the xml sheet and the image
 
 
 
-###Text formatting
+### Text formatting
 ```xml
 <w:r>
     <w:br/>
@@ -111,14 +111,14 @@ ex: my text is *colored*
 ```
 stay aware that text color is nested in r tag!
 
-###Table
+### Table
 ```xml
 <w:tbl>
 ```
 This is a table.
 It's not a paragraph's child! it's replacing a paragraph tag
 
-###Table's children
+### Table's children
 ```xml
 <w:tr>
 ```
@@ -148,14 +148,14 @@ like in html, this is a line
 Here, instead of html tag td and th, you'll have only tc, for columns. there is no header like html. Header are just text style or text formating.
 
 
-##Word content controls
+## Word content controls
 
-##Methods
-###GetText
+## Methods
+### GetText
 
-###GetImage
+### GetImage
 
-###GetRowString
+### GetRowString
 
-##Access time and optimisation
+## Access time and optimisation
 
